@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Ngày 8/3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+        --bg-color: #fff5f8; /* Màu nền hồng cực nhạt, tạo cảm giác thanh khiết */
+        --primary-pink: #e91e63; /* Màu hồng đậm chuẩn cho tiêu đề */
+        --text-dark: #4a148c; /* Chữ màu tím than nhẹ cho sang trọng */
+        --box-pink-bg: #ffe4ed;
+        --box-pink-border: #ffc1d6;
+    }
+
+    /* Thêm hiệu ứng chuyển động cho tiêu đề */
+    .main-title {
+        color: var(--primary-pink);
+        text-shadow: 2px 2px 4px rgba(233, 30, 99, 0.2);
+        animation: heartBeat 1.5s ease-in-out infinite;
+    }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Container chính chứa nội dung thiệp */
+        .card-container {
+            width: 100%;
+            max-width: 480px;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 10; /* Đặt trên hiệu ứng trái tim */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .badge {
+            background-color: white;
+            color: var(--primary-pink);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 8px 24px;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .main-title {
+            color: var(--primary-pink);
+            text-align: center;
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        /* Hình ảnh bó hoa tròn */
+        .image-container {
+            width: 240px;
+            height: 180px;
+            border-radius: 10%;
+            border: 5px solid white;
+            box-shadow: 0 8px 20px rgba(216, 27, 96, 0.15);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .message-box {
+            width: 100%;
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+
+        .message-box h2 {
+            color: #b7114d;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .message-box p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .box-white {
+            background-color: white;
+            box-shadow: 0 4px rgb(209, 185, 185)rgba(0, 0, 0, 0.03);
+        }
+
+        .box-pink {
+            background-color: var(--box-pink-bg);
+            border: 1px solid var(--box-pink-border);
+        }
+
+        .box-pink ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        .box-pink li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .box-pink li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 7px;
+            height: 7px;
+            background-color: var(--primary-pink);
+            border-radius: 50%;
+        }
+        .footer-text {
+            margin-top: 10px;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+        #hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
+            z-index: 99; 
+            overflow: hidden;
+        }
+
+        .floating-heart {
+            position: absolute;
+            bottom: -10vh; /* Bắt đầu từ dưới màn hình */
+            font-size: 1.2rem;
+            color: #ff85a2;
+            opacity: 0;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(0.8) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-50vh) scale(1.2) rotate(15deg);
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-110vh) scale(1) rotate(-15deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="hearts-container"></div>
+
+    <div class="card-container">
+        <div class="badge">
+            <span style="color:#d81b60;">✨</span> 8 / 3 <span style="color:#d81b60;">✨</span>
+        </div>
+
+        <h1 class="main-title">Chúc Mừng Ngày Quốc Tế<br>Phụ Nữ</h1>
+
+        <div class="image-container">
+            <img src="/Users/huuhoan/Documents/ảnh.jpg" alt="Bó hoa hồng">
+        </div>
+
+        <div class="message-box box-white">
+            <h2>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d81b60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                Gửi tất cả Phụ Nữ trong nhà ,
+            </h2>
+            <p>Những người phụ nữ tuyệt vời nhất trong gia đình. Những bông hoa xinh đẹp nhất trong vườn hoa mang tên Gia Đình Choa 😊.</p>
+        </div>
+
+        <div class="message-box box-pink">
+            <h2>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d81b60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"></path></svg>
+                Chúc Mọi Người:
+            </h2>
+            <ul>
+                <li>Luôn khỏe mạnh, tràn đầy năng lượng</li>
+                <li>Hạnh phúc mỗi ngày, mỗi giờ, mỗi phút</li>
+                <li>Lúc nào cũng tươi cười, rạng rỡ và xinh đẹp</li>
+                <li>Luôn được yêu thương và trân trọng</li>
+            </ul>
+        </div>
+
+        <p class="footer-text"><i>Yêu cả nhà!</i> ❤️</p>
+    </div>
+
+    <script>
+        const heartsContainer = document.getElementById('hearts-container');
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            const hearts = ['❤️', '💖', '💕', '💗'];
+            heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 1.5 + 0.8) + 'rem';
+            const duration = Math.random() * 4 + 4;
+            heart.style.animationDuration = duration + 's';       
+            heartsContainer.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
